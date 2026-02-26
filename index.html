@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <script src="src/main.js" type="module"></script>
+    <title>Bills Register</title>
+  </head>
+  <body class="font-sans flex flex-col items-center bg-[#f4f4f4]">
+    <main class="bg-white shadow-[0_0_10px_rgba(0,0,0,0.1);]">
+      <div class="m-5">
+      <header class="flex justify-between">
+        <h1 class="text-4xl font-bold">Lista de Facturas</h1>
+        <button id="add_button" class=" bg-[#007bff] rounded-full w-8 h-8 text-white font-bold text-xl flex justify-center cursor-pointer">+</button>
+      </header>
+      <ul class="flex justify-evenly my-5">
+        <li id="button_all" class="bg-[#007bff] px-2 py-1 rounded-lg text-white cursor-pointer">Todos</li>
+        <li id="button_pending" class="bg-[#ff2200] px-2 py-1 rounded-lg text-white cursor-pointer">Pendientes</li>
+        <li id="button_paid" class="bg-[#00ce00] px-2 py-1 rounded-lg text-white cursor-pointer">Pagadas</li>
+      </ul>
+      <table class="border border-[#dddddd]">
+        <thead>
+          <tr class="bg-[#f0f0f0]">
+            <th class="border border-[#dddddd] px-2 py-1">ID</th>
+            <th class="border border-[#dddddd] px-2 py-1">Numero Factura</th>
+            <th class="border border-[#dddddd] px-2 py-1">Descripcion</th>
+            <th class="border border-[#dddddd] px-2 py-1">Estado</th>
+            <th class="border border-[#dddddd] px-2 py-1">Fecha</th>
+            <th class="border border-[#dddddd] px-2 py-1">Accion</th>
+          </tr>
+        </thead>
+        <tbody id="table_body">
+        </tbody>
+      </table>
+    </main>
+      </div>
+
+    <div id="modal_window" class="hidden absolute w-screen h-screen bg-black/50 flex justify-center items-center">
+      <div class=" bg-white w-100 p-5">
+        <div class="flex justify-between">
+          <h2 class="font-bold text-xl mb-5">Agregar Factura</h2>
+          <button id="close_button" class="font-bold text-[#929292] relative -top-5">X</button>
+        </div>
+        <form class="">
+          <label for="bill_number">Numero de Factura:</label>
+          <br>
+          <input required id="bill_number" type="number" class="border rounded-sm border-[#cccccc] w-full py-1 px-2 my-1">
+          <br>
+          <label for="description">Descripcion:</label>
+          <br>
+          <input required id="description" type="text" class="border rounded-sm border-[#cccccc] w-full py-1 px-2 my-1">
+          <br>
+          <label for="status">Estado:</label>
+          <br>
+          <select required name="status" id="status" class="border rounded-sm border-[#cccccc] w-full py-1 px-2 my-1">
+            <option value="" disabled selected>Select</option>
+            <option value="pagada">Pagada</option>
+            <option value="pendiente">Pendiente</option>
+          </select>
+          <br>
+          <label for="date">Fecha:</label>
+          <br>
+          <input required id="date" type="date" class="border rounded-sm border-[#cccccc] w-full py-1 px-2 my-1">
+          <button id="modal_add" class="bg-[#007bff] rounded-sm w-full p-1 my-2 text-white">Agregar</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
