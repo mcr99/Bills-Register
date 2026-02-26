@@ -79,7 +79,7 @@
  * Ideas: Podrias agregar una clase al boton de eliminar y luego en el css ocultar el boton de eliminar. Tambien podrias tener 2 template uno con el boton de eliminar y otro sin el boton de eliminar.
  */
 
-//###############################################
+
 11- /**
   * @description: Este punto constara de varias partes:
   * 1. Crea una función llamada eliminar facturas que reciba un parametro llamado id
